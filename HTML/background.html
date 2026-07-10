@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>Background Properties</title>
+    <style>
+      .con {
+        background-color: red;
+        /* display: flex;
+        gap: 20px; */
+      }
+      .bg {
+        background-color: rgba(238, 255, 0, 0.4);
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        /* z-index: ; */
+      }
+      .bg2 {
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        background: repeating-linear-gradient(red 10%,blue 50%, yellow 90%);
+      }
+      .bg3 {
+        background-color: rgba(238, 255, 0, 0.4);
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        background: radial-gradient(circle at top left,red 20%,blue 50%,green 80%);
+      }
+      .bg4 {
+        background-color: rgba(238, 255, 0, 0.4);
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        background: repeating-conic-gradient(at left,red 0deg 10deg, green 10deg 30deg);
+      }
+
+      .bg1 {
+        background-color: yellow;
+        border: 10px solid black;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CTDmi3UqNEhFGCqIScGbLbQzrIsXPy0T_FQl06Cua2ibb8sgWC7T_T-F8sQ1zLmt0iLDeWHag4QbkpJIfEqfHW60N1p5oD46jHzDww&s=10);
+        background-repeat: no-repeat;
+        background-position: right;
+        /* background-size: cover; */
+        /* background-attachment: fixed; */
+        /* padding: 50px 20px; */
+        background-origin: content-box;
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        /* background: blue url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFUG8snMCo5eSPKyYUbVdq28WMVQTxjVK-0O0xeKEuX252n-cqNTxFsUgHPmVFtV0XCyVGtS4nwbcqsZDwbvWKv8cs9EedRwzgBNOFXRo&s=10) no-repeat right/cover; */
+        /* z-index: ; */
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="con">
+      <div class="bg">Background</div>
+      <div class="bg2">Background</div>
+      <div class="bg3">Background</div>
+      <div class="bg4">Background</div>
+      <div class="bg1">
+        Background
+      </div>
+    </div>
+  </body>
+</html>

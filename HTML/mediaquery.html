@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="media-style.css" />
+  </head>
+  <body>
+    <header>
+      <h2 class="title">Media Query</h2>
+      <nav class="navi">
+        <label for="sidebar">
+            <i class="fa-solid fa-bars"></i></label>
+        <input type="checkbox" id="sidebar" />
+        <label for="sidebar" class="menu"><i class="fa-regular fa-circle-xmark" ></i></label>
+        <ul class="navlinks">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Details</a></li>
+          <li><a href="#">Content</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="box box1">
+        <h4 class="box-title">What is Media Query?</h4>
+        <p class="box-content">
+          Media queries are the backbone of Responsive Web Design (RWD),
+          allowing web pages to adapt their layout and styling in real-time
+          based on the user's device characteristics, viewport size, or system
+          preferences.
+        </p>
+      </div>
+      <div class="box box2">
+        <h4 class="box-title">Declaration</h4>
+        <p class="box-content">
+          They use the @media CSS at-rule to apply a specific block of CSS rules
+          only if the device meets the defined condition.
+        </p>
+      </div>
+      <div class="box box3">
+        <h4 class="box-title">Syntax Structure</h4>
+        <p class="box-content">
+          A media query consists of an optional media type (e.g., screen for
+          displays, print for documents) and a media feature condition enclosed
+          in parentheses.
+        </p>
+      </div>
+      <div class="box box4">
+        <h4 class="box-title">Breakpoints</h4>
+        <p class="box-content">
+          The width or height condition where a web layout fundamentally changes
+          to fit the screen is called a breakpoint. Common breakpoints include
+          widths for mobiles (~ 480px), tablets (~ 768px), and desktops (~
+          1024px).
+        </p>
+      </div>
+      <div class="box box5">
+        <h4 class="box-title">Logical Operators</h4>
+        <p class="box-content">
+          Conditions can be chained using operators like and (both conditions
+          must be true), not (reverses the query), or only (ensures legacy
+          browsers ignore the styles).
+        </p>
+      </div>
+      <div class="box box6">
+        <h4 class="box-title">Beyond Screen Width</h4>
+        <p class="box-content">
+          While screen width and height are the most common uses, media queries
+          also detect device orientation (portrait/landscape), resolution (for
+          Retina displays), and system-level user preferences (like
+          prefers-color-scheme for dark mode).
+        </p>
+      </div>
+      <div class="box box7">
+        <h4 class="box-title">CSS Cascade & Specificity</h4>
+        <p class="box-content">
+          Media queries do not add specificity to the selectors inside them.
+          Because source order matters in CSS, any layout overrides must be
+          placed correctly (usually sequentially by size) so the browser
+          cascades them accurately.
+        </p>
+      </div>
+    </div>
+    <footer>
+      <div class="author">
+        <h4>About</h4>
+        <p>Media Query Demo</p>
+        <p>Created by Madhan</p>
+        <p>2026.06.22</p>
+      </div>
+      <div class="social-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Phone</a>
+      </div>
+    </footer>
+  </body>
+</html>

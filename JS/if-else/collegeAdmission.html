@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="admissionDetails"></div>
+    <script>
+      
+      let studentName = prompt("Enter Your Name");
+      let percent_10th = Number(prompt("Enter Your 10th Percentage"));
+      let percent_12th = Number(prompt("Enter Your 12th Percentage"));
+      let entranceExam = Number(prompt("Enter Your Entrance Exam Marks"));
+
+      let admissionStatus, allotedBranch;
+      if (percent_10th >= 80 && percent_12th >= 80 && entranceExam >= 70) {
+        admissionStatus = "Alloted";
+        allotedBranch = "CSE";
+      } else if (
+        percent_10th >= 65 &&
+        percent_10th < 80 &&
+        percent_12th >= 65 &&
+        percent_12th < 80 &&
+        entranceExam >= 50 &&
+        entranceExam < 70
+      ) {
+        admissionStatus = "Alloted";
+        allotedBranch = "CSE - Cyber Security";
+      } else if (
+        percent_10th >= 50 &&
+        percent_10th < 65 &&
+        percent_12th >= 50 &&
+        percent_12th < 65 &&
+        entranceExam >= 35 &&
+        entranceExam < 50
+      ) {
+        admissionStatus = "Alloted";
+        allotedBranch = "Non-IT";
+      } else {
+        admissionStatus = "No Admission";
+        allotedBranch = "Not Alloted";
+      }
+
+
+      document.getElementById("admissionDetails").innerHTML = `<h3>Student Name: ${studentName}</h3> <p>Admission Status: ${admissionStatus}</p> <p>Alloted Branch: ${allotedBranch}</p>` ;
+      console.log(`Student: ${studentName}`);
+      console.log(`10th Percentage: ${percent_10th}`);
+      console.log(`12th Percentage: ${percent_12th}`);
+      console.log(`Entrance Exam Marks: ${entranceExam}`);
+      console.log(`Admission Status: ${admissionStatus}`);
+      console.log(`Alloted Branch: ${allotedBranch}`);
+    </script>
+  </body>
+</html>

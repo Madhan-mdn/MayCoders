@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    h1 {
+      background-color: rgb(3, 5, 128);
+      color: rgb(255, 255, 255);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      text-align: center;
+      padding: 5px;
+    }
+    .details {
+      display: flex;
+    padding: 20px;
+    }
+    .card{
+        width: 40%;
+        box-shadow: 5px 5px 5px black;
+        border-radius: 20px;
+        margin: auto;
+    }
+    img {
+      width: 200px;
+      height: 250px;   
+      border: 4px solid rgb(3, 5, 128);
+    }
+    .details pre {
+      font-size: 16px;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+      margin: 10px;
+    }
+    h2 {
+        display: block;
+        font-size: 50px;
+        text-align: center;
+    }
+
+  </style>
+  <body>
+      <div class="card">
+        <h1>IDENTIFICATION CARD</h1>
+        <div class="details">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6bXLuYCqsNHSJbB2T19IiKfVkDNXrrv3z4A61_fcHlQ&s=10"
+            alt="photo"
+          />
+          <div>
+            <pre>Name:       JOHN DOE</pre>
+            <pre>Title:      Software Engineer</pre>
+            <pre>ID No:      123456789</pre>
+            <pre>Issued:     01/01/2024</pre>
+            <pre>Expires:    01/01/2025</pre>
+            <h2>COMPANY</h2>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

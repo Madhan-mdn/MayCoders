@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model 1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        width: 500px;
+        border-radius: 20px;
+        box-shadow: 5px 5px 20px rgb(0, 0, 0);
+        margin: 50px auto;
+        background-color: rgb(255, 255, 255);
+      }
+      h2 {
+        background-color: rgb(0, 4, 125);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: 10px;
+      }
+      .image {
+        margin: 20px;
+        border: 4px solid rgb(10, 1, 133);
+      }
+      .image img {
+        width: 200px;
+        height: 250px;
+        display: block;
+        }
+      .card{
+        display: flex;
+      }
+      label{
+        width: 70px;
+        display: inline-block;
+        color: grey;
+      }
+      input {
+        border: none;
+        width: 100px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .content>div {
+        margin-bottom: 10px;
+      }
+      .content {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        }
+      h1{
+        margin-top: 10px;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="box">
+      <div>
+        <h2 class="heading">IDENTIFICATION CARD</h2>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="https://picsum.photos/200/250" alt="Image" />
+        </div>
+        <div class="content">
+            <div>
+                <label>Name:</label>
+                <input type="text" value="Madhan" readonly />
+            </div>
+            <div>
+                <label>Title:</label>
+                <input type="text" value="Director" readonly />
+            </div>
+            <div>
+                <label>ID No:</label>
+                <input type="text" value="123456" readonly />
+            </div>
+            <div>
+                <label>Issued:</label>
+                <input type="text" value="01/01/2026" readonly />
+            </div>
+            <div>
+                <label>Expires:</label>
+                <input type="text" value="31/12/2026" readonly />
+            </div>
+          <h1>COMPANY</h1>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

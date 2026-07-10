@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Application Form</h2>
+    <form>
+        <label for=firstname>First Name:</label>
+        <input type="text" id="firstname" name="firstname">
+
+        <label for=lastname>Last Name:</label>
+        <input type="text" id="lastname" name="lastname">
+
+        <br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="15">
+
+        <br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <br><br>
+
+        <label for="positions">Positions Available:</label>
+        <input type="radio" id="jrdev" name="position" value="jrdev">
+        <label for="jrdev">Junior Developer</label>
+        <input type="radio" id="middev" name="position" value="middev">
+        <label for="middev">Mid-level Developer</label>
+        <input type="radio" id="srdev" name="position" value="srdev">
+        <label for="srdev">Senior Developer</label>
+
+        <br><br>
+
+        <label for="prolang">Programming Language:</label>
+        <input type="checkbox" id="java" name="java" value="java">
+        <label for="java">Java</label>
+        <input type="checkbox" id="javascript" name="javascript" value="javascript">
+        <label for="javascript">JavaScript</label>
+        <input type="checkbox" id="python" name="python" value="python">
+        <label for="python">Python</label>
+
+        <br><br>
+
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="pass" minlength="8" maxlength="16">
+        <label for="confirmpass">Confirm Password:</label>
+        <input type="password" id="confirmpass" name="confirmpass" minlength="8" maxlength="16">
+
+        <BR><BR>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+
+
+        
+        
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+      #products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        text-align: center;
+      }
+      .card {
+        width: 32%;
+        border: 1px solid black;
+      }
+      .card img {
+        width: 100%;
+        height: 400px;
+        object-fit: contain;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="products"></div>
+
+    <script>
+      const products = [
+        {
+          id: 1,
+          name: "OnePlus 15R",
+          price: 48000,
+          rating: 4.5,
+          category: "Mobiles",
+          discount: "10%",
+          discountedPrice: 0,
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz--lHv6pIcP9A2rZHGqNLb9Iy3mA0OEGp-SGeZRKqay3nKyhdEc2WL88R&s=10",
+        },
+        {
+          id: 2,
+          name: "IPhone 16 Pro",
+          price: 48000,
+          rating: 3.9,
+          category: "Mobiles",
+          discount: "30%",
+          discountedPrice: 0,
+          image:
+            "https://media-ik.croma.com/Croma%20Assets/Communication/Mobiles/Images/309729_0_mnt0xu.png",
+        },
+        {
+          id: 3,
+          name: "Samsung S25 Ultra",
+          price: 95000,
+          rating: 4.0,
+          category: "Mobiles",
+          discountedPrice: 0,
+          discount: "15%",
+          image:
+            "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRAVstiV04jARnCDc9DFPCmoyh36O6RQTsCrM8vlAWM_QjLj4uHMFC53EE9nTmgTwbQu1TxVymI9dHLUnTq2NHR3l7FnwnEUBQ0uv7DRx3tmXWr3LVS_jUoZgo",
+        },
+        {
+          id: 4,
+          name: "OnePlus 15R",
+          price: 48000,
+          rating: 5,
+          category: "Mobiles",
+          discountedPrice: 0,
+          discount: 20,
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz--lHv6pIcP9A2rZHGqNLb9Iy3mA0OEGp-SGeZRKqay3nKyhdEc2WL88R&s=10",
+        },
+        {
+          id: 102,
+          name: "Haier Fridge",
+          price: 35000,
+          rating: 5,
+          category: "Home Appliances",
+          discountedPrice: 0,
+          discount: 20,
+          image:
+            "https://m.media-amazon.com/images/I/31081qqKWvL._SX342_SY445_QL70_FMwebp_.jpg",
+        },
+        {
+          id: 103,
+          name: "Lloyd AC ",
+          price: 40000,
+          rating: 3,
+          category: "Home Appliances",
+          discountedPrice: 0,
+          discount: 20,
+          image: "https://m.media-amazon.com/images/I/61NfZpQ8JtL._SX679_.jpg",
+        },
+        {
+          id: 1,
+          name: "Iron Tawa",
+          price: 4000,
+          rating: 4.8,
+          category: "Kitchen Essentials",
+          discountedPrice: 0,
+          discount: 5,
+          image:
+            "https://m.media-amazon.com/images/I/31pP1ol73PL._SY300_SX300_QL70_FMwebp_.jpg",
+        },
+        {
+          id: 2,
+          name: "Tshirts",
+          price: 700,
+          rating: 3.5,
+          category: "Clothes",
+          discountedPrice: 0,
+          discount: 10,
+          image: "https://m.media-amazon.com/images/I/61QziHqkPtL._SY879_.jpg",
+        },
+        {
+          id: 3,
+          name: "Cooker",
+          price: 3000,
+          rating: 4.6,
+          category: "Kitchen Essentials",
+          discountedPrice: 0,
+          discount: 12,
+          image:
+            "https://m.media-amazon.com/images/I/41-bb+sxr-L._SY300_SX300_QL70_FMwebp_.jpg",
+        },
+      ];
+
+      for (let i = 0; i < products.length; i++) {
+        products[i].discountedPrice = products[i].price * (products[i].discount/100);
+        document.getElementById("products").innerHTML += `<div class="card">
+                <img src="${products[i].image}" alt="image">
+                <h2>Title: ${products[i].name}</h2> 
+                <p>Rating: ${products[i].rating}</p> 
+                <h3>Price: ${products[i].discountedPrice}</h3> 
+                <h3>Discount: ${products[i].discount}</h3> 
+                <h3>Original Price: ${products[i].price}</h3> 
+                <button>Add to Cart</button>
+                <button>Buy Now</button>
+                </div>`;
+      }
+    </script>
+  </body>
+</html>

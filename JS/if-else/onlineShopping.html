@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="order-invoice"></div>
+
+    <script>
+      let customerName = prompt("Enter Customer Name");
+      let productPrice = Number(prompt("Enter Price"));
+      let productQuantity = Number(prompt("Enter Quantity"));
+      let couponCode = prompt("Enter Your Coupon Code");
+      let membershipStatus = prompt("Do You Have Membership? YES or NO");
+
+      let totalAmount = productPrice * productQuantity;
+      console.log(totalAmount);
+
+      let couponDiscount, membershipDiscount, delivery;
+
+      if (totalAmount > 1000) {
+        if (couponCode === "COUPON10") {
+          couponDiscount = productPrice * 1.0;
+        } else if (couponCode === "SAVE35") {
+          couponDiscount = productPrice * 3.5;
+        } else {
+          couponDiscount = 0;
+        }
+      }
+      else{
+        couponDiscount = 0;
+      }
+
+      if (membershipStatus === "YES") {
+        membershipDiscount = 100;
+      } else {
+        membershipDiscount = 0;
+      }
+
+      if (totalAmount > 1000) {
+        delivery = 0;
+      } else {
+        delivery = 99;
+      }
+
+      let finalBill =
+        totalAmount - couponDiscount - membershipDiscount + delivery;
+
+      document.getElementById("order-invoice").innerHTML = `
+        <h3>Customer Name: ${customerName}</h3>
+        <p>Product Price: $${productPrice}</p>
+        <p>Quantity: ${productQuantity}</p>
+        <p>Total Amount: $${totalAmount}</p>
+        <p>Coupon Discount: $${couponDiscount}</p>
+        <p>Membership Discount: $${membershipDiscount}</p>
+        <p>Delivery Charges: $${delivery};</p>
+        <h2>Final Bill: $${finalBill}</h2>   `;
+    </script>
+  </body>
+</html>

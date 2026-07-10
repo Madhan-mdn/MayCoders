@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #movies{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .movie-card{
+            width: 32%;
+            border: 1px solid orange;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .movie-card img{
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+        }
+        .movie-name{
+            color: blue;
+        }
+        .movie-price{
+            color: green;
+        }
+        .seats{
+            color: pink;
+        }
+        .housefull{
+            color: red;
+        }
+        .bookNow-button{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="movies"></div>
+
+
+    <script>
+        const movies = [
+            {
+                poster: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/24623b111384271.6000a082a190a.png",
+                movie: "Salaar",
+                price: 250,
+                availableSeats: 0
+            },
+            {
+                poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyz9Dyp1eQBL7531mKzTcrnwzdxBsMx3ryx0Vgt_6vqy9d7kSYUzcx8es&s=10",
+                movie: "Dude",
+                price: 230,
+                availableSeats: 100
+            },
+            {
+                poster: "https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+                movie: "Spiderman Brand New Day",
+                price: 430,
+                availableSeats: 100
+            },
+            {
+                poster: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/24623b111384271.6000a082a190a.png",
+                movie: "Salaar",
+                price: 250,
+                availableSeats: 0
+            },
+            {
+                poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyz9Dyp1eQBL7531mKzTcrnwzdxBsMx3ryx0Vgt_6vqy9d7kSYUzcx8es&s=10",
+                movie: "Dude",
+                price: 230,
+                availableSeats: 100
+            },
+            {
+                poster: "https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+                movie: "Spiderman Brand New Day",
+                price: 430,
+                availableSeats: 100
+            },
+            {
+                poster: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/24623b111384271.6000a082a190a.png",
+                movie: "Salaar",
+                price: 250,
+                availableSeats: 0
+            },
+            {
+                poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyz9Dyp1eQBL7531mKzTcrnwzdxBsMx3ryx0Vgt_6vqy9d7kSYUzcx8es&s=10",
+                movie: "Dude",
+                price: 230,
+                availableSeats: 100
+            },
+            {
+                poster: "https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+                movie: "Spiderman Brand New Day",
+                price: 430,
+                availableSeats: 100
+            },
+            {
+                poster: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/24623b111384271.6000a082a190a.png",
+                movie: "Salaar",
+                price: 250,
+                availableSeats: 0
+            },
+            {
+                poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyz9Dyp1eQBL7531mKzTcrnwzdxBsMx3ryx0Vgt_6vqy9d7kSYUzcx8es&s=10",
+                movie: "Dude",
+                price: 230,
+                availableSeats: 100
+            },
+            {
+                poster: "https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+                movie: "Spiderman Brand New Day",
+                price: 430,
+                availableSeats: 100
+            }
+        ]
+
+
+        for(let i = 0; i < movies.length; i++){
+            if(movies[i].availableSeats === 0){
+                document.getElementById("movies").innerHTML += `<div class="movie-card">
+                <img src="${movies[i].poster}">
+                <h2 class="movie-name">Movie Name: ${movies[i].movie}</h2>
+                <p class="movie-price">Price: ${movies[i].price}</p>
+                <p class="seats">Available Seats: ${movies[i].availableSeats}</p>
+                <h1 class="housefull">HOUSE FULL</h1>
+            </div>`;
+            }
+            else{
+                document.getElementById("movies").innerHTML += `<div class="movie-card">
+                <img src="${movies[i].poster}">
+                <h2 class="movie-name">Movie Name: ${movies[i].movie}</h2>
+                <p class="movie-price">Price: ${movies[i].price}</p>
+                <p class="seats">Available Seats: ${movies[i].availableSeats}</p>
+                <button class="bookNow-button"> Book Now</button>
+            </div>`;
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

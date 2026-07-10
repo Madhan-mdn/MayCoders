@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="studentReport">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Marks</th>
+            <th>Grade</th>
+            <th>Result</th>
+        </tr>
+    </table>
+
+
+    <script>
+        const students = [
+            {
+                id: 101,
+                name: "Rahul",
+                course: "MERN",
+                marks: 91,
+                grade: null,
+                result: null
+            },
+            {
+                id: 102,
+                name: "Mani",
+                course: "Data Analytics",
+                marks: 87,
+                grade: null,
+                result: null
+            },
+            {
+                id: 103,
+                name: "Vignesh",
+                course: "AI & DS",
+                marks: 88,
+                grade: null,
+                result: null
+            },
+            {
+                id: 104,
+                name: "Madhan",
+                course: "JFD",
+                marks: 59,
+                grade: null,
+                result: null
+            },
+            {
+                id: 105,
+                name: "Hruthik",
+                course: "React",
+                marks: 77,
+                grade: null,
+                result: null
+            },
+            {
+                id: 103,
+                name: "Naresh",
+                course: "Cyber Security",
+                marks: 66,
+                grade: null,
+                result: null
+            }
+        ]
+            
+
+        let studentID = Number(prompt("Enter Student ID"));
+        let studentName = prompt("Enter Student Name");
+        let course = prompt("Enter Course");
+        let marks = prompt("Enter Marks");
+        let grade, result;
+            if(marks >= 90){
+                grade = "A+";
+                result = "PASS"
+            }
+            else if(marks >= 80 ){
+                grade = "A";
+                result = "PASS"
+            }
+            
+            else if(marks >= 70){
+                grade = "B";
+                result= "PASS"
+            }
+            else if(marks >= 60){
+                grade = "C";
+                result = "PASS"
+            }
+            else{
+                grade = "F";
+                result = "FAIL";
+            }         
+        
+
+
+        for(let i = 0; i < students.length; i++){
+            if(students[i].marks >= 90){
+                students[i].grade = "A+";
+                students[i].result = "PASS"
+            }
+            else if(students[i].marks >= 80 ){
+                students[i].grade = "A";
+                students[i].result = "PASS"
+            }
+            
+            else if(students[i].marks >= 70 ){
+                students[i].grade = "B";
+                students[i].result= "PASS"
+            }
+            else if(students[i].marks >= 60){
+                students[i].grade = "C";
+                students[i].result = "PASS"
+            }
+            else{
+                students[i].grade = "F";
+                students[i].result = "FAIL";
+            }            
+        }
+
+        for(let i = 0; i < students.length; i++){
+            document.getElementById("studentReport").innerHTML += `<tr>
+                <td>${students[i].id}</td>
+                <td>${students[i].name}</td>
+                <td>${students[i].course}</td>
+                <td>${students[i].marks}</td>
+                <td>${students[i].grade}</td>
+                <td>${students[i].result}</td>
+                </tr>`;
+        }
+
+        document.getElementById("studentReport").innerHTML  += `<tr>
+                    <td>${studentID}</td>
+                    <td>${studentName}</td>
+                    <td>${course}</td>
+                    <td>${marks}</td>
+                    <td>${grade}</td>
+                    <td>${result}</td>
+                    </tr>`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .card{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .front-card{
+            margin: 100px 50px;
+            width: 320px;
+            height: 500px;
+            background-color: rgb(7,144,213);
+            box-shadow:0 2px 10px  black;
+        }
+        .company-details{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 25px;
+        }
+        .company-details img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+        .tag{
+            text-align: center;
+            color: rgb(222, 222, 222);
+        }
+        .tag>p{
+            font-size: 10px;
+        }
+        .profile{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 10px;
+            border: 7px solid rgb(0, 0, 193);
+        }
+        .name{
+            text-align: center;
+            color: rgb(0, 0, 193);
+        }
+        .details pre{
+            font-size: 20px;
+            margin:2px;
+        }
+        .details{
+            margin: 15px;
+        }
+        span{
+            font-weight: bold;
+        }
+        .back-card{
+            margin: 100px 50px;
+            width: 320px;
+            height: 500px;
+            background-color: rgb(7, 144, 213);
+            box-shadow:0 2px 10px  black;
+
+        }
+        .barcode{
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .barcode>img{
+            width: 100px;      
+        }
+        .terms>h2{
+            color:white;
+            font-size:20px;
+            margin: 50px 0px 0px 20px;
+        }
+        .terms>hr{
+            width:100px;
+            margin:7px 20px;
+        }
+        .conditions>ul{
+            list-style-type: circle;
+            margin-left: 25px;
+            margin-right: 7px;
+        }
+        li{
+            margin:10px
+        }
+        .sign {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: 20px;
+            margin-top: 30px;
+        }
+        .sign hr {
+            width: 100px;
+        }
+        .sign>h4{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="front-card">
+            <div class="company-details">
+                <div>
+                    <img src="https://i.pinimg.com/736x/a0/74/65/a07465d220cafbbd271a52272da3da68.jpg" alt="logo">
+                </div>
+                <div class="tag">
+                    <h3>COMPANY NAME</h3>
+                    <p>TAGLINE HERE</p>
+               </div>
+            </div>
+            <div class="profile">
+                <div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEV5gWfQ1Hy_N5oaVv7r15CXNkaB3lfOn1Hg&s" alt="photo">
+                </div>
+                <div class="name">
+                    <h2>GOJO SATORU</h2>
+                    <p>SORCERER</p>
+                </div>
+            </div>
+            <div class="details">
+                <pre><span>ID NO</span>  :123243534</pre>
+                <pre><span>D.O.B</span>  :26-05-2004</pre>
+                <pre><span>Blood</span>  :A+</pre>
+                <pre><span>Phone</span>  :1213345365</pre>
+                <pre><span>E-mail</span> :mail@gmail.com</pre>
+            </div>
+        </div>
+        <div class="back-card">
+            <div class="company-details">
+                <div>
+                    <img src="https://i.pinimg.com/736x/a0/74/65/a07465d220cafbbd271a52272da3da68.jpg" alt="logo">
+                </div>
+                <div class="tag">
+                    <h3>COMPANY NAME</h3>
+                    <p>TAGLINE HERE</p>
+               </div>
+            </div>
+            <div class="barcode">
+                <img src="./barcode.png" alt="barcode">
+            </div>
+            <div class="terms">
+                <h2>Terms & Conditions:</h2>
+                <hr>
+                <div class="conditions">
+                    <ul>
+                        <li>It is long established fact that a reader will be distracted by</li>
+                        <li>It is long established fact that a reader will be distracted by</li>
+                        <li>It is long established fact that a reader will be distracted by</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sign">
+                <h4>Signature</h4>
+                <hr>
+                <h3>Satoru Gojo</h3>
+            </div>
+
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let classes = ["Economy", "Premium Economy", "Business", "First Class"];
+
+        let prices = {
+            "Economy" : 2000,
+            "Premium Economy" : 4000,
+            "Business" : 6000,
+            "First Class" : 10000
+        };
+
+        let name = prompt("Enter Passenger Name");
+        
+        let preferredClass = prompt("Enter Preferred Class \n 0. Economy, 1. Premium Economy, 2. Business, 3. First Class ");
+
+        let numberOfTickets = Number(prompt("Enter Number of Tickets"));
+        
+        let totalAmount, chosenClass;
+
+        switch(preferredClass){
+            case '0':
+                chosenClass = classes[0];
+                totalAmount = numberOfTickets * prices[chosenClass];
+                break;
+
+            case '1':
+                chosenClass = classes[1];
+                totalAmount = numberOfTickets * prices[chosenClass];
+                break;
+
+            case '2':
+                chosenClass = classes[2];
+                totalAmount = numberOfTickets * prices[chosenClass];
+                break;
+
+            case '3':
+                chosenClass = classes[3];
+                totalAmount = numberOfTickets * prices[chosenClass];
+                break;
+            default:
+                console.log("Invalid class");
+        }
+
+        console.log(`Passenger Name: ${name}`);
+        console.log(`Class Name: ${chosenClass}`);
+        console.log(`Number of Tickets: ${numberOfTickets}`);
+
+        console.log(`Tickets Cost Without Charges: ${totalAmount}`);
+
+        let tax = totalAmount * 1.8;
+        console.log(`Airport Tax: ${tax}`);
+
+        let insurance = 250 * numberOfTickets;
+        console.log(`Insurance: ${insurance}`);
+
+        let serviceCharge = 500;
+        console.log(`Service Charges: ${serviceCharge}`);
+
+
+        let grandTotal = totalAmount + tax + insurance + serviceCharge;
+        console.log(`Total Amount Including Tax: ${grandTotal}`);
+
+
+
+    </script>
+
+
+</body>
+</html>

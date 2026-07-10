@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="empDetails"></div>
+
+
+    <script>
+        let empName = prompt("Enter Employee Name");
+        let salary = Number(prompt("Enter Emp Salary"));
+        let experience = Number(prompt("Enter Years of Experience"));
+
+        console.log(`Employee Name : ${empName}`);
+        console.log(`Employee Basic Salary : ${salary}`);
+
+        let bonus, tax;
+
+        if(salary > 100000){
+            tax = salary * 0.2;
+        }
+        else if(salary <= 100000 && salary > 80000){
+            tax = salary * 0.1;
+        }
+        else if(salary <= 80000 && salary > 30000){
+            tax = salary * 0.05;
+        }
+        else{
+            tax = salary * 0.01;
+        }
+
+        if(experience > 15){
+            bonus = 15000;
+        }
+        else if(experience <= 15 && experience > 12){
+            bonus = 10000;
+        }
+        else if(experience <=12 && experience > 5){
+            bonus = 5000;
+        }
+        else{
+            bonus = 0;
+            console.log("No Bonus for Freshers");
+        }
+
+        console.log(`Years of Experience: ${experience} `);
+        console.log(`Bonus : ${bonus}`);
+        console.log(`Tax : ${tax}`);
+
+        document.getElementById("empDetails").innerHTML = `<h3>Employee Name: ${empName}</h3> <p>Basic Salary : ${salary}</p>  <p>Years of Experience : ${experience}</p> <p>Bonus : ${bonus}</p> <p>Tax : ${tax}</p>`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="movie-invoice"></div>
+    <script>
+        let customerName = prompt("Enter Customer Name");
+        let customerAge = Number(prompt("Enter Customer Age"));
+        let numberOfTickets = Number(prompt("Ticket Price : $150 \n Enter Number of Tickets"));
+        let bookingDay = prompt("Enter the Day of Booking: \n 1. Monday 2. Tuesday 3. Wednesday 4. Thursday 5. Friday 6. Saturday 7. Sunday");
+
+        console.log(`Customer Name: ${customerName}`);
+        console.log(`Customer Age: ${customerAge}`);
+        console.log(`Number of Tickets: ${numberOfTickets}`);
+
+        let ticketPrice = 150;
+        let discountOnQuantity, finalAmount, discountOnDay;
+        let totalTicketPrice = ticketPrice * numberOfTickets;
+
+        let movieInvoice = document.getElementById("movie-invoice");
+
+        movieInvoice.innerHTML = `<h2>Customer Name: ${customerName}</h2>
+            <p>Customer Age: ${customerAge}</p>
+            <p>Number of Tickets: ${numberOfTickets}</p>
+            <h2>Total Price: ${totalTicketPrice}</h2>`;
+
+        if(numberOfTickets % 2 == 0 ){
+            console.log("50% discount on Even Number of Tickets");
+            discountOnQuantity = totalTicketPrice * 0.5;
+            movieInvoice.innerHTML += `<p>50% discount on Even Number of Tickets</p>
+            <p>Tickets Discount: ${discountOnQuantity}</p>`;
+        }
+        else {
+            console.log("No discounts on Odd Number of Tickets");
+            discountOnQuantity = 0;
+            movieInvoice.innerHTML += `<p>No discounts on Odd Number of Tickets</p>
+            <p>Tickets Discount: ${discountOnQuantity}</p>`;
+        }
+
+        switch(bookingDay){
+            case "1":
+                bookingDay = "Monday";
+                console.log(`Booked On: ${bookingDay}`);
+                discountOnDay = 0;
+                console.log("No discounts on Monday");
+                movieInvoice.innerHTML += `<p>Booked On: ${bookingDay}</p>
+                <p>No discounts on Monday</p>
+                <p>Day Discount: ${discountOnDay}</p>`;
+                break;
+            case "2":
+                bookingDay = "Tuesday";
+                console.log(`Booked On: ${bookingDay}`);
+                discountOnDay = 0;
+                console.log("No discounts on Tuesday");
+                movieInvoice.innerHTML += `<p>Booked On: ${bookingDay}</p>
+                <p>No discounts on Tuesday</p>
+                <p>Day Discount: ${discountOnDay}</p>`;
+                break;
+            case "3":
+                bookingDay = "Wednesday";
+                console.log(`Booked On: ${bookingDay}`);
+                discountOnDay = totalTicketPrice * 0.1;
+                console.log("10% discount on Wednesday");
+                movieInvoice.innerHTML += `<p>Booked On: ${bookingDay}</p>
+                <p>10% discount on Wednesday</p>
+                <p>Day Discount: ${discountOnDay}</p>`;
+                break;
+            case "4":
+                bookingDay = "Thursday";
+                console.log(`Booked On: ${bookingDay}`);
+                discountOnDay = 0;
+                console.log("No discounts on Thursday");
+                movieInvoice.innerHTML += `<p>Booked On: ${bookingDay}</p>
+                <p>No discounts on Thursday</p>
+                <p>Day Discount: ${discountOnDay}</p>`;
+                break;
+            case "5":
+                bookingDay = "Friday";
+                console.log(`Booked On: ${bookingDay}`);
+                discountOnDay = 0;
+                console.log("No discounts on Friday");
+                movieInvoice.innerHTML += `<p>Booked On: ${bookingDay}</p>
+                <p>No discounts on Friday</p>
+                <p>Day Discount: ${discountOnDay}</p>`;
+                break;
+            case "6":
+                bookingDay = "Saturday";
+                console.log(`Booked On: ${bookingDay}`);
+                discountOnDay = totalTicketPrice * 0.4;
+                console.log("40% discount on Weekends");
+                movieInvoice.innerHTML += `<p>Booked On: ${bookingDay}</p>
+                <p>40% discount on Weekends</p>
+                <p>Day Discount: ${discountOnDay}</p>`;
+                break;
+            case "7":
+                bookingDay = "Sunday";
+                console.log(`Booked On: ${bookingDay}`);
+                discountOnDay = totalTicketPrice * 0.4;
+                console.log("40% discount on Weekends");
+                movieInvoice.innerHTML += `<p>Booked On: ${bookingDay}</p>
+                <p>40% discount on Weekends</p>
+                <p>Day Discount: ${discountOnDay}</p>`;
+                break;
+            default:
+                discountOnDay = 0;
+                console.log("Enter Valid Day in Week");  
+                movieInvoice.innerHTML += `<p>Booked On: ${bookingDay}</p>
+                <p>Entered Invalid Day</p>
+                <p>Day Discount: ${discountOnDay}</p>`; 
+        }
+
+
+        finalAmount = totalTicketPrice - discountOnDay- discountOnQuantity;
+
+        movieInvoice.innerHTML += `<h2>Final Bill: ${finalAmount}`;
+
+
+        console.log(`Ticket Price : ${totalTicketPrice}`);
+        console.log(`Discount Based on Number of Tickets: ${discountOnQuantity}`);
+        console.log(`Discount Based on Booking Day: ${discountOnDay}`);
+        console.log(`Total Payable Amount : ${finalAmount}`);
+    </script>
+</body>
+</html>

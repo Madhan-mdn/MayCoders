@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h4{
+            text-align: center;
+        }
+        fieldset{
+            width: 60%;
+            padding: 30px;
+            margin: 20px auto;
+        }
+        legend{
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        label{
+            display: inline-block;
+            width: 140px;
+        }
+        textarea{
+            vertical-align: top;
+        }
+        .buttons{
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>   
+            <legend>Registration Form</legend>         
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter first name">
+                <br><br>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter last name">
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email Address">
+                <br><br>
+
+                <label for="pass">Password</label>
+                <input type="password" id="pass" name="pass" placeholder="Enter Password" minlength="8" maxlength="16">
+                <br><br>
+
+                <label>Gender:</label>
+                <input type="radio" id="malegender" name="gender" value="male">
+                <label for="malegender">Male</label>
+                <input type="radio" id="femalegender" name="gender" value="female">
+                <label for="femalegender">Female</label>
+                <input type="radio" id="othergender" name="gender" value="other">
+                <label for="othergender">Other</label>
+                <br><br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="0">
+                <br><br>
+
+                <label>Preferences:</label>
+                <input type="checkbox" id="acrylic" name="preferences" value="Acrylic">
+                <label for="acrylic">Acrylic Painting</label>
+                <input type="checkbox" id="oil" name="preferences" value="Oil">
+                <label for="oil">Oil Painting</label>
+                <input type="checkbox" id="watercolor" name="preferences" value="WaterColor">
+                <label for="watercolor">Water Color Painting</label>
+                <br><br>
+
+                <label for="occupation">Occupation:</label>
+                <select id="occupation" name="occupation">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="engineer">Engineer</option>
+                </select>
+                <br><br>
+
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" rows="6" cols="35" placeholder="Share few lines about yourself..."></textarea>
+                <br><br>
+                <div class="buttons">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit</button>
+                </div>
+                
+        </fieldset>
+    </form>
+</body>
+</html>

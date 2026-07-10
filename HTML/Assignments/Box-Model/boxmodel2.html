@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .front-card{
+            margin: 100px 50px;
+            width: 350px;
+            height: 500px;
+            background-color:rgb(176, 177, 177);
+            box-shadow: 5px 15px 20px black;
+        }
+        .front-card img{
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 8px solid rgb(0, 0, 0);
+            display: block;
+            margin: 50px auto 20px;
+        }
+        .front-card h2{
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+        .front-card p{
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+        .front-card hr{
+            width: 50px;
+            color: rgb(0, 0, 0);
+            margin: 20px auto;
+            height: 5px;
+            background-color: black;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+        }
+        .front-logo>img{
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;   
+        }
+        .back-card{
+            margin: 100px 50px;
+            width: 350px;
+            height: 500px;
+            background-color: rgb(176, 177, 177);
+            box-shadow: 5px 15px 20px black;
+        }
+        .empty{
+            height: 50%;
+            background-color: rgb(176, 177, 177);
+        }
+        .back-logo>img{
+            width: 50px;
+            height: 50px;
+            margin: 0 10px; 
+            border-radius: 50%;  
+            border: 8px solid rgb(0, 0, 0);
+        }
+        .back-content{
+            display: flex;
+            justify-content: center;
+        }
+        .details{
+            margin-left: 90px;
+            margin-top: 10px;
+            width: 80%;
+        }
+        .details>pre{
+            font-size: 15px;
+            margin: 5px;;
+        }
+        .barcode{
+            display:flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .barcode>img{
+            width:160px;      
+            border: 2px solid blue;
+            padding: 2px;
+        }
+    </style>    
+</head>
+<body>
+    <section class="box">
+        <div class="front-card">
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEV5gWfQ1Hy_N5oaVv7r15CXNkaB3lfOn1Hg&s" alt="gojo image">
+            </div>
+            <div>
+                <h2>GOJO SATORU</h2>
+                <p>Creative Manager</p>
+                <hr>
+            </div>
+            <div class="content">
+               <div class="front-logo">
+                    <img src="https://i.pinimg.com/736x/a0/74/65/a07465d220cafbbd271a52272da3da68.jpg" alt="logo image">
+               </div> 
+               <div class="tag">
+                    <h2>COMPANY</h2>
+                    <p>TAGLINE HERE</p>
+               </div>
+            </div>
+        </div>
+        <div class="back-card">
+            <div class="empty">
+                
+            </div>
+            <div class="back-content">
+                <div class="back-logo">
+                    <img src="https://i.pinimg.com/736x/a0/74/65/a07465d220cafbbd271a52272da3da68.jpg" alt="logo image">
+                </div>
+                <div class="tag">
+                    <h2>COMPANY</h2>
+                    <p>TAGLINE HERE</p>
+               </div>
+            </div>
+            <div class="details">
+                <pre>ID NO  :123243534</pre>
+                <pre>Blood  :A+</pre>
+                <pre>Phone  :1213345365</pre>
+                <pre>E-mail :mail@gmail.com</pre>
+            </div>
+            <div class="barcode">
+                <img src="./barcode.png" alt="barcode">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
