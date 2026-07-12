@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>  
+    <div id="admission"></div>
+    
+
+    <script>
+        let studentName = prompt("Enter Student Name");
+        let courseFee = Number(prompt("Enter Course Fee"));
+        let category = Number(prompt("Enter 1 for General \n Enter 2 for OBC \n Enter 3 for SC/ST"));
+
+        let admission = document.getElementById("admission");
+
+        admission.innerHTML = `<h2>Student Name: ${studentName}</h2>
+        <p>Course Fees: $${courseFee}</p>`;
+
+        let scholorship = 0, registration = 1000, admissionStatus;
+
+        switch(category){
+            case 1:
+                admission.innerHTML += `<p>Category: General</p>
+                <p>0% Scholarship for General Category</p>
+                <p>Scolorship: $${scholorship}</p>`;
+                admissionStatus = "Confirmed";
+                break;
+            case 2:
+                scholorship = courseFee * 0.15;
+                admission.innerHTML += `<p>Category: OBC</p>
+                <p>15% Scholarship for OBC Category</p>
+                <p>Scolorship: $${scholorship}</p>`;
+                admissionStatus = "Confirmed";
+                break;
+            case 3:
+                scholorship = courseFee * 0.3;
+                admission.innerHTML += `<p>Category: SC/ST</p>
+                <p>30% Scholarship for SC/ST Category</p>
+                <p>Scolorship: $${scholorship}</p>`;
+                admissionStatus = "Confirmed";
+                break;
+            default:
+                admission.innerHTML += `<p>Invalid Category</p>
+                <p>Scolorship: $${scholorship}</p>`;
+                admissionStatus = "Pending";
+        }
+
+        let payableAmount = courseFee - scholorship + registration;
+
+        admission.innerHTML += `<p>Registration Fees: $${registration}</p>
+        <p>Payable Amount: $${payableAmount}</p>
+        <p>Admission Status: ${admissionStatus}</p>`;
+
+    </script>
+</body>
+</html>

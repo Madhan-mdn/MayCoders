@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        span{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="emp-details"></div>
+    
+    <script>
+        let empID = Number(prompt("Enter Employee ID"));
+        let empName = prompt("Enter Employee Name");
+        let salary = Number(prompt("Enter Basic Salary"));
+
+        let hra = salary * 0.2;
+        let da = salary * 0.15;
+        let pf = salary * 0.12;
+        let bonus;
+
+        if(salary > 50000){
+            bonus = 5000;
+        }
+        else if(salary > 30000){
+            bonus = 2500;
+        }
+        else{
+            bonus = 500;
+        }
+
+        let netSalary = salary + hra + da + bonus - pf;
+
+
+        document.getElementById("emp-details").innerHTML = `<p>Employee ID: <span>${empID}</span></p>
+        <p>Employee Name: <span>${empName}</span></p>
+        <p>Basic Salary: <span>$ ${salary}</span></p>
+        <p>HRA: <span>$ ${hra}</span></p>
+        <p>DA: <span>$ ${da}</span></p>
+        <p>PF: <span>$ ${pf}</span></p>
+        <p>Bonus: <span>$ ${bonus}</span></p>
+        <h3>Net Salary: $ ${netSalary}</h3>`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+      }
+        span{
+            font-weight: bold;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="restaurant-bill"></div>
+
+    <script>
+      let customerName = prompt("Enter Customer Name");
+      let numberOfFoods = Number(prompt("Number of Food Items"));
+      let bill = document.getElementById("restaurant-bill");
+
+      bill.innerHTML = `<h2>Customer Bill</h2>
+        <p>Customer Name: <span>${customerName}<span></p>
+        <p>Total Items: <span>${numberOfFoods}</span></p>`;
+
+      let foodName, quantity, price, itemTotal=0;
+
+      for (let i = 0; i < numberOfFoods; i++) {
+        foodName = prompt(
+          "Enter Food Name \n 1. Pizza \n 2. Burger \n 3. Fried Chicken \n 4. Coca-cola",
+        );
+        price = Number(
+          prompt(
+            "Enter Price \n 1. Pizza: 449 \n 2. Burger: 199 \n 3. Fried Chicken: 99 \n 4. Coca-cola: 49",
+          ),
+        );
+        switch (foodName) {
+          case "1":
+            foodName = "Pizza";
+            price = 449;
+            quantity = Number(prompt("What's the Quantity?"));
+
+            break;
+          case "2":
+            foodName = "Burger";
+            price = 199;
+            quantity = Number(prompt("What's the Quantity?"));
+
+            break;
+          case "3":
+            foodName = "Fried Chicken";
+            price = 99;
+            quantity = Number(prompt("What's the Quantity?"));
+
+            break;
+          case "4":
+            foodName = "Coca-cola";
+            price = 49;
+            quantity = Number(prompt("What's the Quantity?"));
+
+            break;
+          default:
+            foodName = "Invalid Food Item";
+            price = 0;
+            quantity = 0;
+        }
+        bill.innerHTML += `<p>Food Item: <span>${foodName}</span></p>
+        <p>Quantity: <span>${quantity}</span></p>`;
+
+        itemTotal = itemTotal+ (quantity * price);
+      }
+
+
+
+      let gst = itemTotal * 0.05;
+
+      let discount, finalBill;
+
+      if (itemTotal > 3000) {
+        discount = itemTotal * 0.2;
+      } else if (itemTotal > 1500) {
+        discount = itemTotal * 0.1;
+      } else {
+        discount = 0;
+      }
+
+      finalBill = itemTotal + gst - discount;
+
+      bill.innerHTML += `<p>Items Total Amount = <span>$ ${itemTotal}</span></p>
+      <p>GST: <span>$ ${gst}</span></p>
+        <p>Discount: <span>$ ${discount}</span></p>
+        <h3>Final Bill: $ ${finalBill}</h3>`;
+    </script>
+  </body>
+</html>

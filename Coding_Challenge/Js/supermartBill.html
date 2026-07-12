@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="supermart"></div>
+
+    <script>
+      let customerName = prompt("Enter Customer Name");
+      let quantity = Number(prompt("Enter Number of Products"));
+
+      let bill = document.getElementById("supermart");
+
+      bill.innerHTML = `<h2>Customer Name: ${customerName}</h2>
+            <p>Number of products: ${quantity}</p>`;
+
+      let productTotal = 0,
+        subTotal = 0;
+
+      for (let i = 1; i <= quantity; i++) {
+        let productName = prompt("Enter Product Name");
+        let productPrice = Number(prompt("Enter Product Price"));
+        let productQuantity = Number(prompt("Enter Number of Items"));
+
+        productTotal += productPrice * productQuantity;
+
+        bill.innerHTML += `<p>Product-${i}</p>
+            <p>Name: ${productName}</p>
+            <p>Price: $${productPrice}</p>
+            <p>Quantity: ${productQuantity}</p>
+            <p>Product Total: $${productTotal}</p>`;
+        subTotal += productTotal;
+      }
+
+      let discount, discountAmount;
+      if(subTotal > 30000){
+        discount = 20;
+        discountAmount = subTotal * (discount/100);
+      }
+      else if(subTotal > 15000){
+        discount = 10;
+        discountAmount = subTotal * (discount/100);
+      }
+      else{
+        discount = 0;
+        discountAmount = 0;
+      }
+
+      let afterDiscount = subTotal - discountAmount;
+      let gst = afterDiscount * 0.18;
+
+      let finalBill = subTotal - discountAmount + gst;
+
+      bill.innerHTML += `<p>Total Amount: $${subTotal}</p>
+      <p>Discount(%): ${discount}%</p>
+      <p>Discount: $${discountAmount}</p>
+      <p>GST 18%: $${gst}</p>
+      <p>Final Pay: $${finalBill}</p>`;
+    </script>
+  </body>
+</html>

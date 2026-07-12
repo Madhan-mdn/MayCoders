@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="atm"></div>
+
+    <script>
+        let customerName = prompt("Enter Customer Name");
+        let balance = Number(prompt("Enter Balance Amount"));
+
+        let atm = document.getElementById("atm");
+
+        atm.innerHTML = `<h3>Customer Name: ${customerName}</h3>
+        <p>Current Balance: ${balance}</p>`;
+
+        let transaction = Number(prompt("Press 1 for Withdraw \n Press 2 for Deposit \n Press 3 for Balace Enquiry"));
+
+        switch(transaction){
+            case 1:
+                atm.innerHTML += `<p>Transaction: Withdrawal</p>`;
+                let withdrawAmount = Number(prompt("Enter Withdrawal Amount"));
+                let withdrawBalance = balance - withdrawAmount;
+                if(withdrawBalance < 1000){
+                    atm.innerHTML += `<p>Transaction Failed! Minimum Balance 1000</p>`;
+                }
+                else{
+                    atm.innerHTML += `<p>Withdrawal Success.</p> 
+                    <p>Withdraw Amount: ${withdrawAmount}</p>
+                    <h2>Current Balance: ${withdrawBalance}</h2>`;
+                }
+                break;
+            case 2:
+                atm.innerHTML += `<p>Tranasaction: Deposit</p>`;
+                let depositAmount = Number(prompt("Enter Deposit Amount"));
+                let depositBalance = balance + depositAmount;
+                atm.innerHTML += `<p>Deposit Success.</p> 
+                <p>Deposit Amount: ${depositAmount}</p>
+                <h2>Current Balance: ${depositBalance}</h2>`;
+                break;
+            case 3:
+                atm.innerHTML += `<p>Tranasaction: Balance Enquiry</p>
+                <h2>Balance: ${balance}</h2>`;
+                break;
+            default:
+                atm.innerHTML += `<p>Invalid Transaction!!!</p>`;                
+        }
+    </script>
+</body>
+</html>
