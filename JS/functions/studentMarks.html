@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #details{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        #details div label{
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+            width: 200px;
+        }
+        #details div input{
+            outline: none;
+            padding: 10px;
+        }
+
+        .showButton{
+            background-color: green;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            width: 150px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        #table {
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            /* width: ; */
+        }
+        tr,th,td{
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="details">
+      <div class="name">
+        <label for="name">Student Name</label>
+        <input type="text" id="name" placeholder="Enter Student Name" />
+      </div>
+      <div class="roll">
+        <label for="roll">Roll Number</label>
+        <input type="text" id="roll" placeholder="Enter Student Roll Number"/>
+      </div>
+      <div class="htmlMarks">
+        <label for="html">HTML Marks</label>
+        <input type="number" id="html" placeholder="Enter HTML Marks"/>
+      </div>
+      <div class="cssMarks">
+        <label for="css">CSS Marks</label>
+        <input type="number" id="css" placeholder="Enter CSS Marks"/>
+      </div>
+      <div class="jsMarks">
+        <label for="js">JS Marks</label>
+        <input type="number" id="js" placeholder="Enter JS Marks"/>
+      </div>
+    <button onclick="studentDetails()" class="showButton">Show Data</button>
+    </div>
+
+
+    <div id="dataTable"></div>
+
+    <script>
+      function studentDetails() {
+        let studentName = document.getElementById("name").value;
+        let rollNumber = document.getElementById("roll").value;
+        let htmlMarks = Number(document.getElementById("html").value);
+        let cssMarks = Number(document.getElementById("css").value);
+        let jsMarks = Number(document.getElementById("js").value);
+
+        if (
+          htmlMarks < 0 ||
+          htmlMarks > 100 ||
+          cssMarks < 0 ||
+          cssMarks > 100 ||
+          jsMarks < 0 ||
+          jsMarks > 100
+        ) {
+          document.getElementById("details").innerHTML =
+            "<p>Invalid Marks</p>";
+        }
+        let totalMarks = 300;
+        let obtainedMarks = htmlMarks + cssMarks + jsMarks;
+        let percentage = (obtainedMarks / totalMarks) * 100;
+        let grade, result;
+
+        if (percentage >= 90) {
+          grade = "A+";
+          result = "PASS";
+        } else if (percentage >= 80) {
+          grade = "A";
+          result = "PASS";
+        } else if (percentage >= 70) {
+          grade = "B";
+          result = "PASS";
+        } else if (percentage >= 60) {
+          grade = "C";
+          result = "PASS";
+        } else if (percentage >= 50) {
+          grade = "D";
+          result = "PASS";
+        } else {
+          grade = "F";
+          result = "Fail";
+        }
+
+        document.getElementById("dataTable").innerHTML = `<table id="table">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Roll Number</th>
+                    <th>Total Marks</th>
+                    <th>Obtained Marks</th>
+                    <th>Percentage</th>
+                    <th>Grade</th>
+                    <th>Result</th>
+                    </tr>
+                <tr>
+                    <td>${studentName}</td>
+                    <td>${rollNumber}</td>
+                    <td>${totalMarks}</td>
+                    <td>${obtainedMarks}</td>
+                    <td>${percentage}</td>
+                    <td>${grade}</td>
+                    <td>${result}</td>
+                    </tr>
+                </table>`;
+      }
+    </script>
+  </body>
+</html>

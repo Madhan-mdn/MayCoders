@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="welcome">
+
+    </div>
+
+    <hr>
+
+    <div id="customer">
+        <button onclick="show()">Click for Customer Name</button>
+    </div>
+
+    <hr>
+
+    <div id="square">
+
+    </div>
+
+    <hr>
+
+    <div id="product">
+
+    </div>
+
+    <hr>
+    
+    <div id="greet">
+
+    </div>
+
+    <hr>
+
+    <div id="itemsBill">
+        
+    </div>
+
+    <hr>
+
+    <div id="discount">
+
+    </div>
+
+    <hr>
+
+    <div id="menu">
+        <button onclick="menu('Pizza', 199)">Pizaa</button>
+        <button onclick="menu('Coke', 49)">Coke</button>
+        <button onclick="menu('Chicken Biryani', 299)">Biryani</button>
+    </div>
+
+    <hr>
+
+    <div id="card">
+
+    </div>
+
+    <hr>
+
+    <button onclick="plus()">+</button>
+        <button onclick="minus()">-</button>
+    <div id="updater">
+        
+    </div>
+
+    <script>
+        function welcome(){
+            document.getElementById("welcome").innerHTML = `<h2>Welcome to Our Restaurant</h2>`;
+        }
+
+        welcome();
+
+        function show(){
+           function customer(name){ 
+                document.getElementById("customer").innerHTML = `<h2>Hello, ${name} </h2>`;
+            }  
+            customer("Madhan");
+        }
+               
+        
+        function square(a){
+            return a * a;
+        }
+        // let squareOfNum = square(4);
+        document.getElementById("square").innerHTML = `<h2>Square = ${square(4)} </h2>`;
+
+        let product = (product, price = 100) => {
+            document.getElementById("product").innerHTML = `<h3>Product: ${product}</h3>
+            <h4>Price: ${price} </h4>`;
+        }
+
+        product("Laptop");
+
+        function greet(user = "Guest"){
+            document.getElementById("greet").innerHTML += `<h2>Welcome, ${user}</h2>`;
+        }
+
+        greet();
+        greet("Madhan");
+
+        function item(item, quantity, pricePerUnit){
+            let total = quantity * pricePerUnit;
+            document.getElementById("itemsBill").innerHTML = `<h2>Item Name: ${item}</h2>
+            <h4>Quantity: ${quantity}</h4>
+            <h4>Price Per Unit: ${pricePerUnit}</h4>
+            <h3>Total Price: ${total}<h3>`;
+        }
+
+        item("Laptop", 2, 43900);
+
+        function discount(amount, discount = 10){
+            let discountAmount = amount * (discount/100);
+            let finalBill = amount- discountAmount;
+            document.getElementById("discount").innerHTML = `<h2>Amount: ${amount}</h2>
+            <h3>Discount: ${discount}%</h3>
+            <h3>Discounted Amount: ${discountAmount}</h3>
+            <h2>Final Pay: ${finalBill}</h2>`;
+        }
+
+        discount(2200);
+
+        function menu(item, price){
+            document.getElementById("menu").innerHTML = `<h2>Item Name: ${item}</h2>
+            <h3>Price: ${price}`;
+        }
+
+        function card(customerName, itemName, quantity, pricePerItem){
+            let total = quantity * pricePerItem;
+
+            document.getElementById("card").innerHTML = `<div>
+                <h2>Customer Name: ${customerName}</h2> 
+                <h2>Item Name: ${itemName}</h2> 
+                <h4>Quantity: ${quantity}</h4>
+                <h3>Price Per Item: $${pricePerItem}</h3>
+                <h2>Total: $${total}</h2>  </div>`;
+        }
+
+        card("Madhan","Biryani",4,299);
+        
+
+        let quantity = 0;
+        function plus(){
+            quantity += 1;
+            document.getElementById("updater").innerHTML = `<h2>Number of Items: ${quantity}</h2>`;
+        }
+        function minus(){
+            if(quantity < 1){
+                quantity = 1;
+            }
+            quantity -= 1;
+            document.getElementById("updater").innerHTML = `<h2>Number of Items: ${quantity}</h2>`;
+        }
+
+    </script>
+</body>
+</html>
